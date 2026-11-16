@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="402.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.duoc.tallerbicicletas.controller.TallerController">
+   <children>
+      <Label layoutX="4.0" layoutY="6.0" text="Registro de bicicletas">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutY="55.0" text="Tipo:">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label layoutX="-2.0" layoutY="85.0" text="Codigo:">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label layoutY="109.0" text="Año de fabricacion:">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <Label layoutX="1.0" layoutY="131.0" text="Peso (kg):">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbTipo" layoutX="48.0" layoutY="50.0" onAction="#cambiarTipo" prefWidth="150.0" promptText="Seleccione" visibleRowCount="2" />
+      <TextField fx:id="txtCodigo" layoutX="86.0" layoutY="84.0" prefHeight="15.0" prefWidth="78.0">
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAanio" layoutX="83.0" layoutY="109.0">
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPeso" layoutX="83.0" layoutY="130.0">
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TextField>
+      <TitledPane fx:id="panelElectrico" animated="false" layoutX="7.0" layoutY="174.0" prefHeight="102.0" prefWidth="202.0" text="Datos de bicicleta electrica">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutY="6.0" text="Autonomia(km):">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAutonomia" layoutX="85.0" layoutY="6.0">
+                     <font>
+                        <Font size="5.0" />
+                     </font>
+                  </TextField>
+                  <CheckBox fx:id="chckBateriaCertificada" layoutX="3.0" layoutY="24.0" mnemonicParsing="false" text="Bateria certificada">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="chkGarantiaExtendida" layoutX="3.0" layoutY="36.0" mnemonicParsing="false" text="Garantia extendida">
+                     <font>
+                        <Font size="7.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </AnchorPane>
+        </content>
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TitledPane>
+      <TitledPane fx:id="panelMontanya" animated="false" layoutX="8.0" layoutY="283.0" prefHeight="87.0" prefWidth="202.0" text="Datos de bicicleta de montaña">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutY="6.0" text="Suspensiones:">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSuspensiones" layoutX="63.0" layoutY="7.0">
+                     <font>
+                        <Font size="5.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+        </content>
+         <font>
+            <Font size="7.0" />
+         </font>
+      </TitledPane>
+      <Button layoutX="6.0" layoutY="376.0" mnemonicParsing="false" onAction="#RegistrarBicicleta" text="Registrar">
+         <font>
+            <Font size="6.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tablaBicicletas" layoutX="230.0" layoutY="54.0" prefHeight="318.0" prefWidth="377.0">
+        <columns>
+          <TableColumn fx:id="colTipo" prefWidth="75.0" text="TIPO" />
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="CODIGO" />
+           <TableColumn fx:id="colAanio" prefWidth="75.0" text="AÑO" />
+           <TableColumn fx:id="colPeso" prefWidth="75.0" text="PESO (KG)" />
+           <TableColumn fx:id="colCosto" prefWidth="75.0" text="COSTO M" />
+        </columns>
+      </TableView>
+      <Button layoutX="232.0" layoutY="371.0" mnemonicParsing="false" onAction="#eliminarBicicleta" text="Eliminar">
+         <font>
+            <Font size="6.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblMensaje" layoutX="7.0" layoutY="391.0">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
